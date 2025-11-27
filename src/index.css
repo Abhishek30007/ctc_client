@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-purple: #a855f7;
+    --color-accent-purple: #8b5cf6;
+    --color-bg-dark: #1e1b4b;
+    --color-text-light: #faf5ff;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-card-purple {
+    @apply bg-purple-900/20 backdrop-blur-lg border border-purple-500/30;
+  }
+  
+  .btn-primary-purple {
+    @apply bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 
+           transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+  
+  .input-purple {
+    @apply bg-purple-900/30 border-purple-700 text-purple-50 placeholder-purple-400
+           focus:border-purple-500 focus:ring-2 focus:ring-purple-500/50 transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+  }
+  
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+  
+  @keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
+
